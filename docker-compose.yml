@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - DATABASE_URL=postgresql://db:5432/digital_library
+      - SECRET_KEY=your_secret_key
+      - LOG_LEVEL=INFO
+    depends_on:
+      - db
+    command: ["uvicorn", "src/infrastructure/api/main:app", "--reload"]
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=db
+      - POSTGRES_PASSWORD=db
+      - POSTGRES_DB=digital_library
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
