@@ -1,0 +1,52 @@
+# .gitignore
+
+# Compiled python files
+__pycache__/
+
+# IDE and editor files
+*.idea/
+.vscode/
+
+# Test files
+tests/
+
+# Database migrations
+src/infrastructure/database/migrations/
+
+# Environment variables
+.env
+
+# Build artifacts
+dist/
+
+# Other temporary files
+*.pyc
+*.swp
+*.bak
+*~
+.DS_Store
+
+# Dockerfiles and Docker Compose files
+Dockerfile
+docker-compose.yml
+
+# Development scripts
+scripts/
+
+# Documentation
+docs/
+
+# Jupyter Notebook files
+*.ipynb
+*.ipynb_checkpoints/
+
+# Logs
+logs/
+
+# Temporary files
+*.tmp
+*.log
+*.out
+
+# Unused files
+*.*~
